@@ -18,8 +18,9 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
     private UserDetailsService userDetailsService;
     @Autowired
     public void configureGlobal(AuthenticationManagerBuilder auth) throws Exception {
-        auth.inMemoryAuthentication().passwordEncoder(new DefaultPasswordEncoder())
-                .withUser("admin").password("123456").roles("USER");
+//        auth.inMemoryAuthentication().passwordEncoder(new DefaultPasswordEncoder())
+//                .withUser("admin").password("123456").roles("USER");
+        auth.userDetailsService(userDetailsService).passwordEncoder(new DefaultPasswordEncoder());
     }
     @Override
     protected void configure(HttpSecurity http) throws Exception {
