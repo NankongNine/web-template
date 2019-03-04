@@ -3,3 +3,7 @@ spring:
     name: web-template
   profiles:
     active: dev
+  messages:
+    basename: application/resources/i18n/error
+    encoding: UTF-8
+    cache-duration: -1
